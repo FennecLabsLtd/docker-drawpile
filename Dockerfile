@@ -18,7 +18,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     cd / && rm -rf /tmp/Drawpile
 
-VOLUME ["/drawpile/sessions", "/drawpile/config", "/drawpile/template", "/drawpile/recordings"]
+VOLUME ["/drawpile/sessions", "/drawpile/config", "/drawpile/templates", "/drawpile/recordings"]
 
 ENTRYPOINT ["/usr/bin/drawpile-srv", "--database", "/drawpile/config/config.db", "--sessions", "/drawpile/sessions", "--templates", "/drawpile/templates", "--web-admin-port", "80", "--ssl-cert", "/drawpile/certs/cert.pem", "--ssl-key", "/drawpile/certs/key.pem", "--record", "/drawpile/recordings/%d_%h_%a.dprec"]
 
